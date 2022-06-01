@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<ui:composition template="/_template.xhtml">
+	<ui:define name="content">
+ 		<p:messages id="messages" closable="true">
+            <p:autoUpdate />
+        </p:messages>
+
+		<h:form>
+			<div class="card">
+				<p:dataTable var="visitor" value="#{visitorBean.list}">
+					<p:column>
+					  <img  style="width:120px"  src="#{request.contextPath}#{setup.imagePath}"/>
+					</p:column>
+
+					<p:column headerText="Id">
+						<h:outputText value="#{visitor.id}" />
+					</p:column>
+
+					<p:column headerText="Name">
+						<h:outputText value="#{visitor.nome}" />
+					</p:column>
+
+					<p:column headerText="Description">
+						<h:outputText value="#{visitor.dataNasct}" />
+					</p:column>
+
+					<p:column headerText="RG">
+						<h:outputText value="#{visitor.rg}" />
+					</p:column>
+					
+					<p:column headerText="Ultimo digito RG">
+						<h:outputText value="#{visitor.dgtRg}" />
+					</p:column>
+					
+					<p:column headerText="Data de Cadastro">
+						<h:outputText value="#{visitor.dataCadastro}" />
+					</p:column>
+
+
+				</p:dataTable>
+			</div>
+		</h:form>
+
+	</ui:define>
+</ui:composition>
+</html>
