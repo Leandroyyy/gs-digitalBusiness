@@ -24,7 +24,7 @@ public class Visitor {
 	private String nome;
 
 	@Column(name = "dt_nasc", nullable = false)
-	private LocalDate dataNasct;
+	private Date dataNasct;
 
 	@Column(name = "nr_cpf")
 	private String cpf;
@@ -36,7 +36,7 @@ public class Visitor {
 	private char dgtRg;
 
 	@Column(name = "dt_cadastro", nullable = false)
-	private Date dataCadastro;
+	private Date dataCadastro = new Date();
 
 	private String imagePath;
 
@@ -56,13 +56,6 @@ public class Visitor {
 		this.nome = nome;
 	}
 
-	public LocalDate getDataNasct() {
-		return dataNasct;
-	}
-
-	public void setDataNasct(LocalDate dataNasct) {
-		this.dataNasct = dataNasct;
-	}
 
 	public String getCpf() {
 		return cpf;
@@ -88,11 +81,20 @@ public class Visitor {
 		this.dgtRg = dgtRg;
 	}
 
-	public LocalDateTime getDataCadastro() {
+
+	public Date getDataNasct() {
+		return dataNasct;
+	}
+
+	public void setDataNasct(Date dataNasct) {
+		this.dataNasct = dataNasct;
+	}
+
+	public Date getDataCadastro() {
 		return dataCadastro;
 	}
 
-	public void setDataCadastro(LocalDateTime dataCadastro) {
+	public void setDataCadastro(Date dataCadastro) {
 		this.dataCadastro = dataCadastro;
 	}
 

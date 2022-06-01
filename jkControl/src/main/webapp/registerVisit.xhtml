@@ -27,11 +27,10 @@
 
 
 
-					<div class="p-field p-col-12 p-md-4">
-						<p:outputLabel for="basic" value="Basic" />
+					<div class="p-field p-col-12 p-md-4" style="margin-top: 1.5em">
 						<p:datePicker id="basic" value="#{visitorBean.visitor.dataNasct}"
 							required="true"
-							requiredMessage="A data de nascimento é obrigatório">
+							requiredMessage="A data de nascimento é obrigatório"  style="width:23em" placeholder="Data de nascimento">
 							<f:ajax event="blur" render="msg" />
 						</p:datePicker>
 					</div>
